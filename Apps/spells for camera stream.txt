@@ -1,0 +1,8 @@
+raspi:
+
+cvlc v4l2:///dev/video0 --v4l2-width 640 --v4l2-height 400 --v4l2-chroma h264 --sout '#standard{access=http,mux=ts,dst=0.0.0.0:12345}' :demux=264
+
+client:
+
+ffplay -fflags nobuffer http://192.168.2.1:12345/
+
